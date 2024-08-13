@@ -3,6 +3,7 @@ import { ThemeContext } from './contexts/theme';
 import Header from './components/Header/Header'; 
 import About from './components/About/About'; 
 import Apropos from './components/Apropos/Apropos';
+import Projects from './components/Projects/Projects';
 import './App.css';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
       <main>
         <About />
         <Apropos />
+        <Projects />
         </main>
 
 
