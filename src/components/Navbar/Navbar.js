@@ -1,25 +1,26 @@
-import { useContext, useState } from 'react';
+import { useContext, useState } from 'react'
 import Brightness2Icon from '@mui/icons-material/Brightness2';
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { ThemeContext } from '../../contexts/theme';
-import { projets, compétences, contact, apropos } from '../../portfolio';
-import './Navbar.css';
+import { ThemeContext } from '../../contexts/theme'
+import { projets, compétences, contact, apropos } from '../../portfolio'
+import './Navbar.css'
 
 const Navbar = () => {
-  const [{ themeName, toggleTheme }] = useContext(ThemeContext);
-  const [showNavList, setShowNavList] = useState(false);
+  const [{ themeName, toggleTheme }] = useContext(ThemeContext)
+  const [showNavList, setShowNavList] = useState(false)
 
-  const toggleNavList = () => setShowNavList(!showNavList);
+  const toggleNavList = () => setShowNavList(!showNavList)
 
   return (
     <nav className='center nav'>
       <ul
-        style={{ display: showNavList ? 'flex' : 'none' }}
+        style={{ display: showNavList ? 'flex' : null }}
         className='nav__list'
       >
-        {apropos.description && (
+
+  {apropos.description ? (
           <li className='nav__list-item'>
             <a
               href='#apropos'
@@ -29,9 +30,10 @@ const Navbar = () => {
               à propos
             </a>
           </li>
-        )}
+        ) : null}
 
-        {projets.length > 0 && (
+
+        {projets.length ? (
           <li className='nav__list-item'>
             <a
               href='#projets'
@@ -41,9 +43,9 @@ const Navbar = () => {
               Projets
             </a>
           </li>
-        )}
+        ) : null}
 
-        {compétences.length > 0 && (
+        {compétences.length ? (
           <li className='nav__list-item'>
             <a
               href='#compétences'
@@ -53,9 +55,9 @@ const Navbar = () => {
               Compétences
             </a>
           </li>
-        )}
+        ) : null}
 
-        {contact.email && (
+        {contact.email ? (
           <li className='nav__list-item'>
             <a
               href='#contact'
@@ -65,7 +67,7 @@ const Navbar = () => {
               Contact
             </a>
           </li>
-        )}
+        ) : null}
       </ul>
 
       <button
@@ -86,7 +88,7 @@ const Navbar = () => {
         {showNavList ? <CloseIcon /> : <MenuIcon />}
       </button>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
