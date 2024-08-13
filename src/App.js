@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { ThemeContext } from './contexts/theme';
 import Header from './components/Header/Header'; 
 import About from './components/About/About'; 
+import Apropos from './components/Apropos/Apropos';
 import './App.css';
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
 
       <main>
         <About />
-
+        <Apropos />
         </main>
 
 

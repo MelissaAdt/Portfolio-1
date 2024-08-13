@@ -1,4 +1,8 @@
 import { useContext, useState } from 'react';
+import Brightness2Icon from '@mui/icons-material/Brightness2';
+import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { ThemeContext } from '../../contexts/theme';
 import { projets, compétences, contact, apropos } from '../../portfolio';
 import './Navbar.css';
@@ -70,7 +74,7 @@ const Navbar = () => {
         className='btn btn--icon nav__theme'
         aria-label='toggle theme'
       >
-        {themeName === 'dark' ? '🌞' : '🌜'}
+        {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
       </button>
 
       <button
@@ -79,7 +83,7 @@ const Navbar = () => {
         className='btn btn--icon nav__hamburger'
         aria-label='toggle navigation'
       >
-        {showNavList ? '✖' : '☰'}
+        {showNavList ? <CloseIcon /> : <MenuIcon />}
       </button>
     </nav>
   );
